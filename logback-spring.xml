@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true" scan="true" scanPeriod="5 minutes">
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
+    <property name="LOG_PATH" value="./logs"/>
+    <property name="LOG_FILE" value="application.log"/>
+    <property name="LOG_ARCHIVE" value="${LOG_PATH}/archive"/>
+    <timestamp key="timestamp-by-second" datePattern="yyyy-MM-dd'T'HHmmss"/>
+    <timestamp key="timestamp-format" datePattern="yyyy-MM-dd'T'HH:mm:ss"/>
+Z
+    <appender name="RollingFile-Appender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_PATH}/application.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>application.%i.${timestamp-by-second}.log.zip</fileNamePattern>
+            <minIndex>1</minIndex>
+            <maxIndex>5</maxIndex>
+        </rollingPolicy>
+
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>100MB</maxFileSize>
+        </triggeringPolicy>
+        <encoder>
+            <pattern>${timestamp-format} %thread] %-5level %logger{80} - %msg%n</pattern>
+            <outputPatternAsHeader>true</outputPatternAsHeader>
+        </encoder>
+    </appender>
+
+    <appender name="Console-Appender" class="ch.qos.logback.core.ConsoleAppender">
+        <layout>
+            <pattern>${timestamp-format} [%thread] %-5level %logger{80} - %msg%n</pattern>
+        </layout>
+    </appender>
+
+    <logger name="com.millenniumit.iotedge.analytics" level="DEBUG">
+        <appender-ref ref="RollingFile-Appender"/>
+    </logger>
+
+    <root level="INFO">
+        <appender-ref ref="Console-Appender"/>
+    </root>
+
+</configuration>
