@@ -1,8 +1,6 @@
-package com.edge.reports.api;
+package com.millenniumitesp.report;
 
-import com.millenniumit.iotedge.analytics.model.CountByHourEntity;
-import com.millenniumit.iotedge.analytics.model.CountByHourRepository;
-import com.millenniumit.iotedge.analytics.utils.JsonHelper;
+import DTO.ReportDTO;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.engine.export.JRCsvExporter;
@@ -19,6 +17,7 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import javax.validation.constraints.Null;
 import java.io.IOException;
 import java.io.InputStream;
 import java.time.LocalDate;
@@ -31,49 +30,39 @@ import java.util.Map;
 @Transactional
 public class ReportService {
 
-    private CountByHourRepository countByHourRepository;
     private final Logger log = LoggerFactory.getLogger(ReportService.class);
 
     @Autowired
-    public ReportService(CountByHourRepository countByHourRepository) {
-        this.countByHourRepository = countByHourRepository;
-    }
+    public ReportService(){}
 
-    public String getDailyStats(LocalDate date){
-        List<CountByHourEntity> records = countByHourRepository.findAllByDateOrderByLocation(date);
-        List map = new ArrayList();
-        records.forEach(v -> {
-            try {
-                Map m = new HashMap<String, Object>();
-                m.put("location", v.getLocation());
-                m.put("time", v.getHourRange());
-                m.put("count", v.getCount());
-                map.add(m);
-            } catch (Exception e) {
-                e.printStackTrace();
-                log.error(e.getMessage());
-            }
-        });
+    public HttpEntity getReport(LocalDate date, String type) throws IOException {
+        String reportName = "test_report";
 
-        return JsonHelper.mapToJson2(map);
-    }
+        //Creating ReportDTO instance for testing purpose
+        ReportDTO reportDTO = new ReportDTO();
+        reportDTO.setDepName("Application Engineering");
+        reportDTO.setOrgName("Millennium IT");
+        reportDTO.setDevName("Admin");
+        reportDTO.setGroupName("EAD");
+        reportDTO.setDayStart(LocalDate.now().minusDays(31).toString());
+        reportDTO.setDayEnd(LocalDate.now().minusDays(1).toString());
 
-    public HttpEntity downloadDailyStats(LocalDate date, String type) throws IOException {
-        List<CountByHourEntity> records = countByHourRepository.findAllByDateOrderByLocation(date);
-        String msg;
-
-        //new jasper collection of countbyhourentity
+        List<ReportDTO> records = new ArrayList<ReportDTO>();
+        records.add(reportDTO);
+        //new jasper collection of ReportDTO
         JRBeanCollectionDataSource jasperRecords = new JRBeanCollectionDataSource(records);
 
         //jasper report implementation
-        InputStream employeeReportStream = getClass().getResourceAsStream("/ReportTemplate.jrxml");
+        InputStream employeeReportStream = getClass().getResourceAsStream("/DataUsageBill.jrxml");
         try {
             JasperReport jasperReport = JasperCompileManager.compileReport(employeeReportStream);
             //JRSaver.saveObject(jasperReport, "ReportTemplate.jasper");
 
             //populating some required data
             Map<String, Object> parameters = new HashMap<>();
-            parameters.put("title", "Daily Report - " + date.toString());
+            parameters.put("date",date.toString());
+            parameters.put("ref", reportName);
+            parameters.put("total","1000");
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters,jasperRecords);
 
             //web view
@@ -86,7 +75,7 @@ public class ReportService {
                     JRPdfExporter exporterPDF = new JRPdfExporter();
 
                     exporterPDF.setExporterInput(new SimpleExporterInput(jasperPrint));
-                    exporterPDF.setExporterOutput(new SimpleOutputStreamExporterOutput("DailyReport-" + date.toString() + ".pdf"));
+                    exporterPDF.setExporterOutput(new SimpleOutputStreamExporterOutput(reportName + ".pdf"));
 
                     SimplePdfReportConfiguration reportConfigPDF = new SimplePdfReportConfiguration();
                     reportConfigPDF.setSizePageToContent(true);
@@ -107,17 +96,17 @@ public class ReportService {
                     data = JasperExportManager.exportReportToPdf(jasperPrint);
 
                     header.setContentType(MediaType.APPLICATION_PDF);
-                    header.set(HttpHeaders.CONTENT_DISPOSITION, "inline; filename=DailyReport.pdf");
+                    header.set(HttpHeaders.CONTENT_DISPOSITION, "inline; filename=" + reportName + "pdf");
                     header.setContentLength(data.length);
 
-                    log.info("REPORT : PDF File sent to web browser");
+                    log.info("REPORT : " + reportName + " PDF File sent to web browser");
 
                     break;
                 case "xlsx":
                     JRXlsxExporter exporterXLS = new JRXlsxExporter();
 
                     exporterXLS.setExporterInput(new SimpleExporterInput(jasperPrint));
-                    exporterXLS.setExporterOutput(new SimpleOutputStreamExporterOutput("DailyReport-" + date.toString() + ".xlsx"));
+                    exporterXLS.setExporterOutput(new SimpleOutputStreamExporterOutput(reportName + ".xlsx"));
 
 
                     SimpleXlsxReportConfiguration reportConfigXLS= new SimpleXlsxReportConfiguration();
@@ -126,7 +115,7 @@ public class ReportService {
                     exporterXLS.setConfiguration(reportConfigXLS);
                     exporterXLS.exportReport();
 
-                    log.info("REPORT : EXCEL File sent to Report Folder");
+                    log.info("REPORT : " + reportName + " EXCEL File sent to Report Folder");
 
                     //sending excel file to browser
                     JRXlsxExporter xlsxExporter = new JRXlsxExporter();
@@ -141,10 +130,10 @@ public class ReportService {
                     }
                     data= rawBytes;
                     header.setContentType(MediaType.parseMediaType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"));
-                    header.set(HttpHeaders.CONTENT_DISPOSITION, "inline; filename=DailyReport.xlsx");
+                    header.set(HttpHeaders.CONTENT_DISPOSITION, "inline; filename=" + reportName + ".xlsx");
                     header.setContentLength(data.length);
 
-                    log.info("REPORT : EXCEL File sent to web browser");
+                    log.info("REPORT : " + reportName + " EXCEL File sent to web browser");
 
                     break;
 
@@ -153,29 +142,32 @@ public class ReportService {
                     JRCsvExporter exporterCSV = new JRCsvExporter();
 
                     exporterCSV.setExporterInput(new SimpleExporterInput(jasperPrint));
-                    exporterCSV.setExporterOutput(new SimpleWriterExporterOutput("Reports/DailyReport-" + date.toString() + ".csv"));
+                    exporterCSV.setExporterOutput(new SimpleWriterExporterOutput("Reports/" + reportName + ".csv"));
 
                     exporterCSV.exportReport();
 
-                    log.info("REPORT : CSV File sent to Report Folder");
+                    log.info("REPORT : " + reportName + "CSV File sent to Report Folder");
 
                     //sending PDF to browser : why? No csv view support for browser : need to research more !
                     data = JasperExportManager.exportReportToPdf(jasperPrint);
 
                     header.setContentType(MediaType.APPLICATION_PDF);
-                    header.set(HttpHeaders.CONTENT_DISPOSITION, "inline; filename=DailyReport.pdf");
+                    header.set(HttpHeaders.CONTENT_DISPOSITION, "inline; filename=" + reportName + ".pdf");
                     header.setContentLength(data.length);
 
-                    log.info("REPORT : PDF File sent to web browser");
+                    log.info("REPORT : " + reportName + " PDF File sent to web browser");
                     break;
                 default:
                     data = JasperExportManager.exportReportToPdf(jasperPrint);
                     header.setContentType(MediaType.APPLICATION_PDF);
-                    header.set(HttpHeaders.CONTENT_DISPOSITION, "inline; filename=DailyReport.pdf");
+                    header.set(HttpHeaders.CONTENT_DISPOSITION, "inline; filename=" + reportName + ".pdf");
                     header.setContentLength(data.length);
-                    log.info("REPORT : No File Created , PDF sent to browser.");
+                    log.info("REPORT : No File Created , " + reportName + " PDF sent to browser.");
                     break;
             }
+
+
+
             return new HttpEntity<byte[]>(data, header);
         } catch (JRException e) {
             e.printStackTrace();
@@ -183,14 +175,11 @@ public class ReportService {
 
             HttpHeaders header = new HttpHeaders();
             header.setContentType(MediaType.APPLICATION_PDF);
-            header.set(HttpHeaders.CONTENT_DISPOSITION, "inline; filename=DailyReport.pdf");
+            header.set(HttpHeaders.CONTENT_DISPOSITION, "inline; filename=" + reportName + ".pdf");
             header.setContentLength(10);
 
             log.error("REPORT : No File Created , empty PDF sent to browser.");
             return new HttpEntity<byte[]>(header);
         }
-
-
     }
-
 }

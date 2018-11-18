@@ -1,0 +1,133 @@
+#logback.classic pattern: 2018-09-10T10:39:27 %thread] %-5level %logger{80} - %msg%n
+2018-09-10T10:39:27 main] INFO  com.millenniumitesp.report.ReportApplication - Starting ReportApplication on LP-HQ-15949 with PID 8812 (C:\Users\isurun\Desktop\Projects\report\target\classes started by IsuruN in C:\Users\isurun\Desktop\Projects\report)
+2018-09-10T10:39:27 main] DEBUG com.millenniumitesp.report.ReportApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10T10:39:27 main] INFO  com.millenniumitesp.report.ReportApplication - No active profile set, falling back to default profiles: default
+2018-09-10T10:39:27 main] INFO  com.millenniumitesp.report.ReportApplication - Started ReportApplication in 9.296 seconds (JVM running for 14.476)
+#logback.classic pattern: 2018-09-10T12:49:22 %thread] %-5level %logger{80} - %msg%n
+2018-09-10T12:49:22 main] INFO  com.millenniumitesp.report.ReportApplication - Starting ReportApplication on LP-HQ-15949 with PID 2988 (C:\Users\isurun\Desktop\Projects\report\target\classes started by IsuruN in C:\Users\isurun\Desktop\Projects\report)
+2018-09-10T12:49:22 main] DEBUG com.millenniumitesp.report.ReportApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10T12:49:22 main] INFO  com.millenniumitesp.report.ReportApplication - No active profile set, falling back to default profiles: default
+2018-09-10T12:49:22 main] INFO  com.millenniumitesp.report.ReportApplication - Started ReportApplication in 3.255 seconds (JVM running for 5.059)
+2018-09-10T12:49:22 http-nio-8080-exec-2] INFO  com.millenniumitesp.report.ReportApi - Request Received for Report
+2018-09-10T12:49:22 http-nio-8080-exec-2] ERROR com.millenniumitesp.report.ReportService - Error retrieving field value from bean: OrgName.
+2018-09-10T12:49:22 http-nio-8080-exec-2] ERROR com.millenniumitesp.report.ReportService - REPORT : No File Created , empty PDF sent to browser.
+#logback.classic pattern: 2018-09-10T15:02:23 %thread] %-5level %logger{80} - %msg%n
+2018-09-10T15:02:23 main] INFO  com.millenniumitesp.report.ReportApplication - Starting ReportApplication on LP-HQ-15949 with PID 3528 (C:\Users\isurun\Desktop\Projects\report\target\classes started by IsuruN in C:\Users\isurun\Desktop\Projects\report)
+2018-09-10T15:02:23 main] DEBUG com.millenniumitesp.report.ReportApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10T15:02:23 main] INFO  com.millenniumitesp.report.ReportApplication - No active profile set, falling back to default profiles: default
+2018-09-10T15:02:23 main] INFO  com.millenniumitesp.report.ReportApplication - Started ReportApplication in 3.208 seconds (JVM running for 4.986)
+2018-09-10T15:02:23 http-nio-8080-exec-8] INFO  com.millenniumitesp.report.ReportApi - Request Received for Report
+2018-09-10T15:02:23 http-nio-8080-exec-8] ERROR com.millenniumitesp.report.ReportService - Error retrieving field value from bean: OrgName.
+2018-09-10T15:02:23 http-nio-8080-exec-8] ERROR com.millenniumitesp.report.ReportService - REPORT : No File Created , empty PDF sent to browser.
+#logback.classic pattern: 2018-09-10T15:05:11 %thread] %-5level %logger{80} - %msg%n
+2018-09-10T15:05:11 main] INFO  com.millenniumitesp.report.ReportApplication - Starting ReportApplication on LP-HQ-15949 with PID 10860 (C:\Users\isurun\Desktop\Projects\report\target\classes started by IsuruN in C:\Users\isurun\Desktop\Projects\report)
+2018-09-10T15:05:11 main] DEBUG com.millenniumitesp.report.ReportApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10T15:05:11 main] INFO  com.millenniumitesp.report.ReportApplication - No active profile set, falling back to default profiles: default
+2018-09-10T15:05:11 main] INFO  com.millenniumitesp.report.ReportApplication - Started ReportApplication in 3.189 seconds (JVM running for 4.754)
+2018-09-10T15:05:11 http-nio-8080-exec-1] INFO  com.millenniumitesp.report.ReportApi - Request Received for Report
+2018-09-10T15:05:11 http-nio-8080-exec-1] ERROR com.millenniumitesp.report.ReportService - Error retrieving field value from bean: OrgName.
+2018-09-10T15:05:11 http-nio-8080-exec-1] ERROR com.millenniumitesp.report.ReportService - REPORT : No File Created , empty PDF sent to browser.
+#logback.classic pattern: 2018-09-10T15:08:11 %thread] %-5level %logger{80} - %msg%n
+2018-09-10T15:08:11 main] INFO  com.millenniumitesp.report.ReportApplication - Starting ReportApplication on LP-HQ-15949 with PID 880 (C:\Users\isurun\Desktop\Projects\report\target\classes started by IsuruN in C:\Users\isurun\Desktop\Projects\report)
+2018-09-10T15:08:11 main] DEBUG com.millenniumitesp.report.ReportApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10T15:08:11 main] INFO  com.millenniumitesp.report.ReportApplication - No active profile set, falling back to default profiles: default
+2018-09-10T15:08:11 main] INFO  com.millenniumitesp.report.ReportApplication - Started ReportApplication in 3.273 seconds (JVM running for 4.919)
+2018-09-10T15:08:11 http-nio-8080-exec-1] INFO  com.millenniumitesp.report.ReportApi - Request Received for Report
+2018-09-10T15:08:11 http-nio-8080-exec-1] ERROR com.millenniumitesp.report.ReportService - Report design not valid : 
+	 1. Field not found : OrgName
+2018-09-10T15:08:11 http-nio-8080-exec-1] ERROR com.millenniumitesp.report.ReportService - REPORT : No File Created , empty PDF sent to browser.
+#logback.classic pattern: 2018-09-10T15:09:47 %thread] %-5level %logger{80} - %msg%n
+2018-09-10T15:09:47 main] INFO  com.millenniumitesp.report.ReportApplication - Starting ReportApplication on LP-HQ-15949 with PID 10092 (C:\Users\isurun\Desktop\Projects\report\target\classes started by IsuruN in C:\Users\isurun\Desktop\Projects\report)
+2018-09-10T15:09:47 main] DEBUG com.millenniumitesp.report.ReportApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10T15:09:47 main] INFO  com.millenniumitesp.report.ReportApplication - No active profile set, falling back to default profiles: default
+2018-09-10T15:09:47 main] INFO  com.millenniumitesp.report.ReportApplication - Started ReportApplication in 3.28 seconds (JVM running for 4.863)
+2018-09-10T15:09:47 http-nio-8080-exec-1] INFO  com.millenniumitesp.report.ReportApi - Request Received for Report
+2018-09-10T15:09:47 http-nio-8080-exec-1] ERROR com.millenniumitesp.report.ReportService - Error retrieving field value from bean: DepName.
+2018-09-10T15:09:47 http-nio-8080-exec-1] ERROR com.millenniumitesp.report.ReportService - REPORT : No File Created , empty PDF sent to browser.
+2018-09-10T15:09:47 http-nio-8080-exec-3] INFO  com.millenniumitesp.report.ReportApi - Request Received for Report
+2018-09-10T15:09:47 http-nio-8080-exec-3] ERROR com.millenniumitesp.report.ReportService - Error retrieving field value from bean: DepName.
+2018-09-10T15:09:47 http-nio-8080-exec-3] ERROR com.millenniumitesp.report.ReportService - REPORT : No File Created , empty PDF sent to browser.
+#logback.classic pattern: 2018-09-10T15:11:40 %thread] %-5level %logger{80} - %msg%n
+2018-09-10T15:11:40 main] INFO  com.millenniumitesp.report.ReportApplication - Starting ReportApplication on LP-HQ-15949 with PID 11920 (C:\Users\isurun\Desktop\Projects\report\target\classes started by IsuruN in C:\Users\isurun\Desktop\Projects\report)
+2018-09-10T15:11:40 main] DEBUG com.millenniumitesp.report.ReportApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10T15:11:40 main] INFO  com.millenniumitesp.report.ReportApplication - No active profile set, falling back to default profiles: default
+2018-09-10T15:11:40 main] INFO  com.millenniumitesp.report.ReportApplication - Started ReportApplication in 3.194 seconds (JVM running for 5.006)
+2018-09-10T15:11:40 http-nio-8080-exec-1] INFO  com.millenniumitesp.report.ReportApi - Request Received for Report
+2018-09-10T15:11:40 http-nio-8080-exec-1] ERROR com.millenniumitesp.report.ReportService - Error retrieving field value from bean: DayStart.
+2018-09-10T15:11:40 http-nio-8080-exec-1] ERROR com.millenniumitesp.report.ReportService - REPORT : No File Created , empty PDF sent to browser.
+#logback.classic pattern: 2018-09-10T15:17:39 %thread] %-5level %logger{80} - %msg%n
+2018-09-10T15:17:39 main] INFO  com.millenniumitesp.report.ReportApplication - Starting ReportApplication on LP-HQ-15949 with PID 7560 (C:\Users\isurun\Desktop\Projects\report\target\classes started by IsuruN in C:\Users\isurun\Desktop\Projects\report)
+2018-09-10T15:17:39 main] DEBUG com.millenniumitesp.report.ReportApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10T15:17:39 main] INFO  com.millenniumitesp.report.ReportApplication - No active profile set, falling back to default profiles: default
+2018-09-10T15:17:39 main] INFO  com.millenniumitesp.report.ReportApplication - Started ReportApplication in 3.535 seconds (JVM running for 5.273)
+2018-09-10T15:17:39 http-nio-8080-exec-2] INFO  com.millenniumitesp.report.ReportApi - Request Received for Report
+2018-09-10T15:17:39 http-nio-8080-exec-2] ERROR com.millenniumitesp.report.ReportService - Report design not valid : 
+	 1. Field not found : ToltalAm
+2018-09-10T15:17:39 http-nio-8080-exec-2] ERROR com.millenniumitesp.report.ReportService - REPORT : No File Created , empty PDF sent to browser.
+#logback.classic pattern: 2018-09-10T15:19:13 %thread] %-5level %logger{80} - %msg%n
+2018-09-10T15:19:13 main] INFO  com.millenniumitesp.report.ReportApplication - Starting ReportApplication on LP-HQ-15949 with PID 14544 (C:\Users\isurun\Desktop\Projects\report\target\classes started by IsuruN in C:\Users\isurun\Desktop\Projects\report)
+2018-09-10T15:19:13 main] DEBUG com.millenniumitesp.report.ReportApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10T15:19:13 main] INFO  com.millenniumitesp.report.ReportApplication - No active profile set, falling back to default profiles: default
+2018-09-10T15:19:13 main] INFO  com.millenniumitesp.report.ReportApplication - Started ReportApplication in 3.355 seconds (JVM running for 5.195)
+2018-09-10T15:19:13 http-nio-8080-exec-1] INFO  com.millenniumitesp.report.ReportApi - Request Received for Report
+2018-09-10T15:19:13 http-nio-8080-exec-1] INFO  com.millenniumitesp.report.ReportService - REPORT : PDF File sent to Report Folder
+2018-09-10T15:19:13 http-nio-8080-exec-1] INFO  com.millenniumitesp.report.ReportService - REPORT : test_report PDF File sent to web browser
+#logback.classic pattern: 2018-09-10T15:24:58 %thread] %-5level %logger{80} - %msg%n
+2018-09-10T15:24:58 main] INFO  com.millenniumitesp.report.ReportApplication - Starting ReportApplication on LP-HQ-15949 with PID 16092 (C:\Users\isurun\Desktop\Projects\report\target\classes started by IsuruN in C:\Users\isurun\Desktop\Projects\report)
+2018-09-10T15:24:58 main] DEBUG com.millenniumitesp.report.ReportApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10T15:24:58 main] INFO  com.millenniumitesp.report.ReportApplication - No active profile set, falling back to default profiles: default
+2018-09-10T15:24:58 main] INFO  com.millenniumitesp.report.ReportApplication - Started ReportApplication in 3.364 seconds (JVM running for 5.004)
+2018-09-10T15:24:58 http-nio-8080-exec-1] INFO  com.millenniumitesp.report.ReportApi - Request Received for Report
+2018-09-10T15:24:58 http-nio-8080-exec-1] INFO  com.millenniumitesp.report.ReportService - REPORT : PDF File sent to Report Folder
+2018-09-10T15:24:58 http-nio-8080-exec-1] INFO  com.millenniumitesp.report.ReportService - REPORT : test_report PDF File sent to web browser
+#logback.classic pattern: 2018-09-10T15:28:22 %thread] %-5level %logger{80} - %msg%n
+2018-09-10T15:28:22 main] INFO  com.millenniumitesp.report.ReportApplication - Starting ReportApplication on LP-HQ-15949 with PID 13780 (C:\Users\isurun\Desktop\Projects\report\target\classes started by IsuruN in C:\Users\isurun\Desktop\Projects\report)
+2018-09-10T15:28:22 main] DEBUG com.millenniumitesp.report.ReportApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10T15:28:22 main] INFO  com.millenniumitesp.report.ReportApplication - No active profile set, falling back to default profiles: default
+2018-09-10T15:28:22 main] INFO  com.millenniumitesp.report.ReportApplication - Started ReportApplication in 3.644 seconds (JVM running for 5.309)
+2018-09-10T15:28:22 http-nio-8080-exec-1] INFO  com.millenniumitesp.report.ReportApi - Request Received for Report
+2018-09-10T15:28:22 http-nio-8080-exec-1] ERROR com.millenniumitesp.report.ReportService - Error evaluating expression for source text: $F{dayStart}
+2018-09-10T15:28:22 http-nio-8080-exec-1] ERROR com.millenniumitesp.report.ReportService - REPORT : No File Created , empty PDF sent to browser.
+2018-09-10T15:28:22 http-nio-8080-exec-3] INFO  com.millenniumitesp.report.ReportApi - Request Received for Report
+2018-09-10T15:28:22 http-nio-8080-exec-3] ERROR com.millenniumitesp.report.ReportService - Error evaluating expression for source text: $F{dayStart}
+2018-09-10T15:28:22 http-nio-8080-exec-3] ERROR com.millenniumitesp.report.ReportService - REPORT : No File Created , empty PDF sent to browser.
+#logback.classic pattern: 2018-09-10T15:31:07 %thread] %-5level %logger{80} - %msg%n
+2018-09-10T15:31:07 main] INFO  com.millenniumitesp.report.ReportApplication - Starting ReportApplication on LP-HQ-15949 with PID 7156 (C:\Users\isurun\Desktop\Projects\report\target\classes started by IsuruN in C:\Users\isurun\Desktop\Projects\report)
+2018-09-10T15:31:07 main] DEBUG com.millenniumitesp.report.ReportApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10T15:31:07 main] INFO  com.millenniumitesp.report.ReportApplication - No active profile set, falling back to default profiles: default
+2018-09-10T15:31:07 main] INFO  com.millenniumitesp.report.ReportApplication - Started ReportApplication in 3.76 seconds (JVM running for 5.496)
+#logback.classic pattern: 2018-09-10T15:31:18 %thread] %-5level %logger{80} - %msg%n
+2018-09-10T15:31:18 main] INFO  com.millenniumitesp.report.ReportApplication - Starting ReportApplication on LP-HQ-15949 with PID 14452 (C:\Users\isurun\Desktop\Projects\report\target\classes started by IsuruN in C:\Users\isurun\Desktop\Projects\report)
+2018-09-10T15:31:18 main] DEBUG com.millenniumitesp.report.ReportApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10T15:31:18 main] INFO  com.millenniumitesp.report.ReportApplication - No active profile set, falling back to default profiles: default
+2018-09-10T15:31:18 main] INFO  com.millenniumitesp.report.ReportApplication - Started ReportApplication in 3.324 seconds (JVM running for 5.224)
+2018-09-10T15:31:18 http-nio-8080-exec-1] INFO  com.millenniumitesp.report.ReportApi - Request Received for Report
+2018-09-10T15:31:18 http-nio-8080-exec-1] ERROR com.millenniumitesp.report.ReportService - Error evaluating expression for source text: $F{dayStart}
+2018-09-10T15:31:18 http-nio-8080-exec-1] ERROR com.millenniumitesp.report.ReportService - REPORT : No File Created , empty PDF sent to browser.
+#logback.classic pattern: 2018-09-10T15:33:00 %thread] %-5level %logger{80} - %msg%n
+2018-09-10T15:33:00 main] INFO  com.millenniumitesp.report.ReportApplication - Starting ReportApplication on LP-HQ-15949 with PID 200 (C:\Users\isurun\Desktop\Projects\report\target\classes started by IsuruN in C:\Users\isurun\Desktop\Projects\report)
+2018-09-10T15:33:00 main] DEBUG com.millenniumitesp.report.ReportApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-10T15:33:00 main] INFO  com.millenniumitesp.report.ReportApplication - No active profile set, falling back to default profiles: default
+2018-09-10T15:33:00 main] INFO  com.millenniumitesp.report.ReportApplication - Started ReportApplication in 3.435 seconds (JVM running for 5.093)
+2018-09-10T15:33:00 http-nio-8080-exec-1] INFO  com.millenniumitesp.report.ReportApi - Request Received for Report
+2018-09-10T15:33:00 http-nio-8080-exec-1] INFO  com.millenniumitesp.report.ReportService - REPORT : PDF File sent to Report Folder
+2018-09-10T15:33:00 http-nio-8080-exec-1] INFO  com.millenniumitesp.report.ReportService - REPORT : test_report PDF File sent to web browser
+2018-09-10T15:33:00 http-nio-8080-exec-5] INFO  com.millenniumitesp.report.ReportApi - Request Received for Report
+2018-09-10T15:33:00 http-nio-8080-exec-5] INFO  com.millenniumitesp.report.ReportService - REPORT : PDF File sent to Report Folder
+2018-09-10T15:33:00 http-nio-8080-exec-5] INFO  com.millenniumitesp.report.ReportService - REPORT : test_report PDF File sent to web browser
+#logback.classic pattern: 2018-09-27T13:56:56 %thread] %-5level %logger{80} - %msg%n
+2018-09-27T13:56:56 main] INFO  com.millenniumitesp.report.ReportApplication - Starting ReportApplication on LP-HQ-15949 with PID 15532 (C:\Users\isurun\Desktop\Projects\report\target\classes started by IsuruN in C:\Users\isurun\Desktop\Projects\report)
+2018-09-27T13:56:56 main] DEBUG com.millenniumitesp.report.ReportApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-27T13:56:56 main] INFO  com.millenniumitesp.report.ReportApplication - No active profile set, falling back to default profiles: default
+2018-09-27T13:56:56 main] INFO  com.millenniumitesp.report.ReportApplication - Started ReportApplication in 7.186 seconds (JVM running for 12.947)
+2018-09-27T13:56:56 http-nio-8080-exec-1] INFO  com.millenniumitesp.report.ReportApi - Request Received for Report
+2018-09-27T13:56:56 http-nio-8080-exec-1] INFO  com.millenniumitesp.report.ReportService - REPORT : PDF File sent to Report Folder
+2018-09-27T13:56:56 http-nio-8080-exec-1] INFO  com.millenniumitesp.report.ReportService - REPORT : test_report PDF File sent to web browser
+#logback.classic pattern: 2018-10-10T10:42:01 %thread] %-5level %logger{80} - %msg%n
+2018-10-10T10:42:01 main] INFO  com.millenniumitesp.report.ReportApplication - Starting ReportApplication on LP-HQ-15949 with PID 6524 (C:\Users\isurun\Desktop\Projects\report\target\classes started by IsuruN in C:\Users\isurun\Desktop\Projects\report)
+2018-10-10T10:42:01 main] DEBUG com.millenniumitesp.report.ReportApplication - Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-10-10T10:42:01 main] INFO  com.millenniumitesp.report.ReportApplication - No active profile set, falling back to default profiles: default
+2018-10-10T10:42:01 main] INFO  com.millenniumitesp.report.ReportApplication - Started ReportApplication in 7.985 seconds (JVM running for 13.859)
+2018-10-10T10:42:01 http-nio-8080-exec-1] INFO  com.millenniumitesp.report.ReportApi - Request Received for Report
+2018-10-10T10:42:01 http-nio-8080-exec-1] INFO  com.millenniumitesp.report.ReportService - REPORT : PDF File sent to Report Folder
+2018-10-10T10:42:01 http-nio-8080-exec-1] INFO  com.millenniumitesp.report.ReportService - REPORT : test_report PDF File sent to web browser
